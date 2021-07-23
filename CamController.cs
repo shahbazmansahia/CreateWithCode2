@@ -17,12 +17,12 @@ public class CamController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         angularInput = Input.GetAxis("Mouse ScrollWheel");
 
-        transform.Rotate(Vector3.up, horizontalInput * rotationSpeed * Time.deltaTime);
+        transform.Rotate(Vector3.down, horizontalInput * rotationSpeed * Time.deltaTime);
         transform.Rotate(Vector3.forward, angularSpeed * angularInput * Time.deltaTime);
     }
 }
